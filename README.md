@@ -1,28 +1,15 @@
-<div align="center">
-  <img src="./public/assets/DevSecOps.png" alt="Logo" width="100%" height="100%">
+# Deploy Netflix Clone on Cloud using Jenkins - DevSecOps Project
+A complete guide to deploying a Netflix clone in a cloud environment using DevSecOps best practices. This project demonstrates setting up a CI/CD pipeline using Jenkins, security scanning with SonarQube and Trivy, containerizing with Docker, deploying to Kubernetes, and monitoring with Prometheus and Grafana.
 
-  <br>
-  <a href="http://netflix-clone-with-tmdb-using-react-mui.vercel.app/">
-    <img src="./public/assets/netflix-logo.png" alt="Logo" width="100" height="32">
-  </a>
-</div>
+***Table of Contents***
+**Phase 1: Initial Setup and Deployment**
+**Phase 2: Security Scanning**
+**Phase 3: CI/CD Setup with Jenkins**
+**Phase 4: Monitoring**
+**Phase 5: Notifications**
+**Phase 6: Kubernetes**
+**Phase 7: Cleanup**
 
-<br />
-
-<div align="center">
-  <img src="./public/assets/home-page.png" alt="Logo" width="100%" height="100%">
-  <p align="center">Home Page</p>
-</div>
-
-# **Youtube Video for step by step Demonstration!**
-[![Video Tutorial](https://img.youtube.com/vi/g8X5AoqCJHc/0.jpg)](https://youtu.be/g8X5AoqCJHc)
-
-
-## Susbcribe:
-[https://www.youtube.com/@cloudchamp?
-](https://www.youtube.com/@cloudchamp?sub_confirmation=1)
-
-# Deploy Netflix Clone on Cloud using Jenkins - DevSecOps Project!
 
 ### **Phase 1: Initial Setup and Deployment**
 
@@ -37,7 +24,7 @@
 - Clone your application's code repository onto the EC2 instance:
     
     ```bash
-    git clone https://github.com/N4si/DevSecOps-Project.git
+    git clone https://github.com/mtofiq17/DevSecOps-Netflix.git
     ```
     
 
@@ -204,7 +191,7 @@ pipeline {
         }
         stage('Checkout from Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/N4si/DevSecOps-Project.git'
+                git branch: 'main', url: 'https://github.com/mtofiq17/DevSecOps-Netflix.git'
             }
         }
         stage("Sonarqube Analysis") {
@@ -294,7 +281,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/N4si/DevSecOps-Project.git'
+                git branch: 'main', url: 'https://github.com/mtofiq17/DevSecOps-Netflix.git'
             }
         }
         stage("Sonarqube Analysis "){
@@ -333,20 +320,20 @@ pipeline{
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                        sh "docker build --build-arg TMDB_V3_API_KEY=<yourapikey> -t netflix ."
-                       sh "docker tag netflix nasi101/netflix:latest "
-                       sh "docker push nasi101/netflix:latest "
+                       sh "docker tag netflix tofiqsymits/netflix:latest "
+                       sh "docker push tofiqsymits/netflix:latest "
                     }
                 }
             }
         }
         stage("TRIVY"){
             steps{
-                sh "trivy image nasi101/netflix:latest > trivyimage.txt" 
+                sh "trivy image tofiqsymits/netflix:latest > trivyimage.txt" 
             }
         }
         stage('Deploy to container'){
             steps{
-                sh 'docker run -d --name netflix -p 8081:80 nasi101/netflix:latest'
+                sh 'docker run -d --name netflix -p 8081:80 tofiqsymits/netflix:latest'
             }
         }
     }
