@@ -4,6 +4,15 @@ A complete guide to deploying a Netflix clone in a cloud environment using DevSe
 <div align="center">
     <img src="2024-10-02_16-22.png">
     <img src="public/assets/0-Netflix-k8.png">
+    <img src="public/assets/1.Sonar.png">
+    <img src="public/assets/2.Prom-Mertix.png">
+    <img src="public/assets/3.Chart.png">
+    <img src="public/assets/4.Chart2.png">
+    <img src="public/assets/5.Jenkins Pipeline.png">
+    <img src="public/assets/6.Argo1.png">
+    <img src="public/assets/7.Argo2.png">
+    <img src="public/assets/8.Argo 3.png">
+    <img src="public/assets/9.Setupk8 & Helim.png">
   </a>
 </div>
 
