@@ -2,13 +2,13 @@
 A complete guide to deploying a Netflix clone in a cloud environment using DevSecOps best practices. This project demonstrates setting up a CI/CD pipeline using Jenkins, security scanning with SonarQube and Trivy, containerizing with Docker, deploying to Kubernetes, and monitoring with Prometheus and Grafana.
 
 ***Table of Contents***
-Phase 1: Initial Setup and Deployment
-Phase 2: Security Scanning
-Phase 3: CI/CD Setup with Jenkins
-Phase 4: Monitoring
-Phase 5: Notifications
-Phase 6: Kubernetes
-Phase 7: Cleanup
+#Phase 1: Initial Setup and Deployment
+#Phase 2: Security Scanning
+#Phase 3: CI/CD Setup with Jenkins
+#Phase 4: Monitoring
+#Phase 5: Notifications
+#Phase 6: Kubernetes
+#Phase 7: Cleanup
 
 
 ### **Phase 1: Initial Setup and Deployment**
